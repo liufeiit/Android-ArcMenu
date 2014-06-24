@@ -41,17 +41,19 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 
-		ArcMenu arcMenu = (ArcMenu) findViewById(R.id.arc_menu);
-        ArcMenu arcMenu2 = (ArcMenu) findViewById(R.id.arc_menu_2);
+		// ArcMenu arcMenu = (ArcMenu) findViewById(R.id.arc_menu);
+		// ArcMenu arcMenu2 = (ArcMenu) findViewById(R.id.arc_menu_2);
 
-        initArcMenu(arcMenu, ITEM_DRAWABLES);
-        initArcMenu(arcMenu2, ITEM_DRAWABLES);
+		// initArcMenu(arcMenu, ITEM_DRAWABLES);
+		// initArcMenu(arcMenu2, ITEM_DRAWABLES);
 
+		
 		RayMenu rayMenu = (RayMenu) findViewById(R.id.ray_menu);
-        final int itemCount = ITEM_DRAWABLES.length;
+		int mm[] = {R.drawable.navi48, R.drawable.near48};
+		final int itemCount = mm.length;
 		for (int i = 0; i < itemCount; i++) {
 			ImageView item = new ImageView(this);
-			item.setImageResource(ITEM_DRAWABLES[i]);
+			item.setImageResource(mm[i]);
 
 			final int position = i;
 			rayMenu.addItem(item, new OnClickListener() {
@@ -64,20 +66,20 @@ public class MainActivity extends Activity {
 		}
 	}
 
-    private void initArcMenu(ArcMenu menu, int[] itemDrawables) {
-        final int itemCount = itemDrawables.length;
-        for (int i = 0; i < itemCount; i++) {
-            ImageView item = new ImageView(this);
-            item.setImageResource(itemDrawables[i]);
+	private void initArcMenu(ArcMenu menu, int[] itemDrawables) {
+		final int itemCount = itemDrawables.length;
+		for (int i = 0; i < itemCount; i++) {
+			ImageView item = new ImageView(this);
+			item.setImageResource(itemDrawables[i]);
 
-            final int position = i;
-            menu.addItem(item, new OnClickListener() {
+			final int position = i;
+			menu.addItem(item, new OnClickListener() {
 
-                @Override
-                public void onClick(View v) {
-                    Toast.makeText(MainActivity.this, "position:" + position, Toast.LENGTH_SHORT).show();
-                }
-            });
-        }
-    }
+				@Override
+				public void onClick(View v) {
+					Toast.makeText(MainActivity.this, "position:" + position, Toast.LENGTH_SHORT).show();
+				}
+			});
+		}
+	}
 }

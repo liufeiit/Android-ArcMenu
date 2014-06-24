@@ -8,12 +8,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.Animation;
+import android.view.animation.Animation.AnimationListener;
 import android.view.animation.AnimationSet;
 import android.view.animation.Interpolator;
+import android.view.animation.LayoutAnimationController;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.OvershootInterpolator;
 import android.view.animation.RotateAnimation;
-import android.view.animation.Animation.AnimationListener;
 
 public class RayLayout extends ViewGroup {
 
@@ -170,12 +171,12 @@ public class RayLayout extends ViewGroup {
 
 			@Override
 			public void onAnimationStart(Animation animation) {
-
+				
 			}
 
 			@Override
 			public void onAnimationRepeat(Animation animation) {
-
+				
 			}
 
 			@Override
